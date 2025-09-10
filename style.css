@@ -1,0 +1,282 @@
+@font-face {
+  font-family: "Noto Sans";
+  src: url("fonts/notosans.woff2") format("woff2"),
+       url("fonts/notosans.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/* Define font on the root for CSS variables or inheritance */
+:root {
+  --main-font: "Noto Sans", sans-serif;
+  --bg-color-drk: #181716;
+  --bg-grey: #E8EEF2;
+  --color-main: #181716;
+  --text-color-lgt: #f7f8f9;
+  --bg-color-wht: #ffffff;
+  --button-text: #181716;
+  --link-color: #4CA853;
+}
+
+body {
+  font-family: var(--main-font);
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 14px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: minmax(100px, 260px) 1fr;
+  grid-template-rows: auto 1fr; /* ensures header height is set by content */
+  height: 100vh; /* ensures it fills the full viewport height */
+}
+
+
+
+
+
+
+
+
+
+/* -------- SIDENAV -------- */
+
+.sidenav{
+    background-color: var(--bg-color-drk);
+    grid-column: 1;
+    grid-row: 1 / 3; /* spans from line 1 to line 3 (covers both rows) */
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-color-lgt);
+}
+
+#dashimg {
+  color: var(--text-color-lgt)
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  color: var(--text-color-lgt);
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  font-family: var(--main-font);
+  font-size: 16px;
+  color: var(--text-color-lgt);
+  cursor: pointer;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--text-color-lgt);
+  flex-shrink: 0; /* prevents icon from shrinking inside flex container */
+}
+
+
+
+
+/* -------- HEADER -------- */
+
+.header {
+  background-color: var(--bg-color-wht);
+  grid-column: 2;
+  grid-row: 1;
+  margin: 16px;
+
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* -------- HEADER TOP ROW-------- */
+
+.header-top-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  row-gap: 16px;
+  padding: 16px;
+}
+
+.header-icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--color-main);
+    flex-shrink: 0; /* prevents icon from shrinking inside flex container */
+}
+
+.search form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.search input[type="search"] {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 24px;
+    border: none;
+    max-width: 500px;
+    background-color: var(--bg-grey);
+    color: #727272;
+}
+
+.more {
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+  gap: 20px;
+  flex: 0 1 auto;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.notif-button {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 4px;
+  margin: 0;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-pic-s {
+    width: 32px;
+    height: 32px;
+    fill: #4CA853;
+    flex-shrink: 0;
+}
+
+.search {
+  flex: 1 1 300px;  /* grow/shrink with a min width */
+}
+
+/* -------- HEADER LOWER ROW -------- */
+
+.header-lower-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  row-gap: 16px;
+  padding: 16px;
+}
+
+.greeting {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+}
+
+.profile-pic-l {
+    width: 52px;
+    height: 52px;
+    fill: #4CA853;
+    flex-shrink: 0;
+}
+
+.sub-greeting {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sub-greeting p,
+.sub-greeting h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+}
+
+.header-action {
+    background-color: var(--color-main); 
+    color: var(--text-color-lgt);
+    padding: 8px 20px;
+    border: none;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* for if we added icons :) */
+}
+
+
+
+
+/* -------- MAIN -------- */
+.main {
+    background-color: var(--bg-grey);
+    grid-column: 2;
+    display: flex;
+    gap: 24px
+}
+
+/* -------- PROJECTS -------- */
+.projects {
+    margin: 20px;
+    width: 100%;
+}
+
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  min-height: 150px;
+  max-width: 600px;
+}
